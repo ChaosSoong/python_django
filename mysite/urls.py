@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import *
-from mysite.views import hello
+from mysite.views import hello,current_datetime
 
 urlpatterns = patterns('',
     ('^hello/$', hello),
+	('^time/$',current_datetime)
 )
