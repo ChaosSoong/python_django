@@ -3,7 +3,10 @@ from django.template.loader import get_template
 from django.template import Context
 import datetime
 def hello(request):
-    return HttpResponse("<em>Hello world</em>")
+    #return HttpResponse("<em>Hello world</em>")
+	t = get_template('rose.html')
+	html = t. render(Context({'name':'I LOVE YOU'}))
+	return HttpResponse(html)
 
 def hours_ahead(request, offset):
     try:
