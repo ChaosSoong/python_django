@@ -1,34 +1,38 @@
-##×¢Òâ¿Ó
-Êı¾İ¿â²ÉÓÃµÄÊÇsqlite3
-**1.Êı¾İÑéÖ¤ÃüÁî:python manage.py check
+##æ³¨æ„å‘
+###æ•°æ®åº“é‡‡ç”¨çš„æ˜¯sqlite3
+
+**1.æ•°æ®éªŒè¯å‘½ä»¤:python manage.py check**
  
-**2.Éú³ÉÊı¾İ¿â±í:python manage.py makemigrations models_name
+**2.ç”Ÿæˆæ•°æ®åº“è¡¨:python manage.py makemigrations models_name**
 
-**3.Í¬²½Ä£ĞÍµ½Êı¾İ¿âµÄÃüÁî:python manage.py migrate
+**3.åŒæ­¥æ¨¡å‹åˆ°æ•°æ®åº“çš„å‘½ä»¤:python manage.py migrate**
 
-**4.from books.models import Author //µ¼ÈëAuthorÄ£ĞÍÀà
+**4.from books.models import Author //å¯¼å…¥Authoræ¨¡å‹ç±»**
 
-  a=Author(first_name='',last_name='',email='')  //´´½¨Ä£ĞÍÀàµÄÊµÀı
+  a=Author(first_name='',last_name='',email='')  //åˆ›å»ºæ¨¡å‹ç±»çš„å®ä¾‹
   
-  a.save()//±£´æµ½Êı¾İ¿â
+  a.save()//ä¿å­˜åˆ°æ•°æ®åº“
   
-  Author.objects.all() //È¡³öÊı¾İ¿âµÄĞÅÏ¢£¬Ïàµ±ÓÚÖ´ĞĞÁËÒ»ÌõSQL `` SELECT`` Óï¾ä
+  Author.objects.all() //å–å‡ºæ•°æ®åº“çš„ä¿¡æ¯ï¼Œç›¸å½“äºæ‰§è¡Œäº†ä¸€æ¡SQL `` SELECT`` è¯­å¥
 
-**5.Êı¾İ¹ıÂË:Author.objects.filter(name='')//¿ÉÒÔ´«µİ¶à¸ö²ÎÊı  name__contains=''Ä£ºıÆ¥Åä,·µ»ØÒ»¸ö¼ÇÂ¼¼¯
+**5.æ•°æ®è¿‡æ»¤:Author.objects.filter(name='')//å¯ä»¥ä¼ é€’å¤šä¸ªå‚æ•°  name__contains=''æ¨¡ç³ŠåŒ¹é…,è¿”å›ä¸€ä¸ªè®°å½•é›†**
 
-    »ñÈ¡µ¥¸ö¶ÔÏó£ºAuthor.objects.get(name='') //Èç¹û²éÑ¯Ã»ÓĞ·µ»Ø½á¹û¾Í»áÅ×³öÒì³£
+	è·å–å•ä¸ªå¯¹è±¡ï¼šAuthor.objects.get(name='') //å¦‚æœæŸ¥è¯¢æ²¡æœ‰è¿”å›ç»“æœå°±ä¼šæŠ›å‡ºå¼‚å¸¸
 	
-	Êı¾İÅÅĞò£ºAuthor.objects.order_by('name')//'-name'ÄæĞò£¬²ÎÊıÒ²¿ÉÒÔÎª¶à¸ö£¬µÚ¶ş¸ö×Ö¶Î»áÔÚµÚÒ»¸ö×Ö¶ÎµÄÖµÏàÍ¬µÄÇé¿öÏÂ±»Ê¹ÓÃµ½
+	æ•°æ®æ’åºï¼šAuthor.objects.order_by('name')//'-name'é€†åºï¼Œå‚æ•°ä¹Ÿå¯ä»¥ä¸ºå¤šä¸ªï¼Œç¬¬äºŒä¸ªå­—æ®µä¼šåœ¨ç¬¬ä¸€ä¸ªå­—æ®µçš„å€¼ç›¸åŒçš„æƒ…å†µä¸‹è¢«ä½¿ç”¨åˆ°
 	
-	ÔÚÄ£ĞÍÖĞÖ¸¶¨È±Ê¡ÅÅĞò·½Ê½£º'''class Meta
-									ordering =['name']'''
+	åœ¨æ¨¡å‹ä¸­æŒ‡å®šç¼ºçœæ’åºæ–¹å¼ï¼šclass Meta
+								ordering =['name']
 									
-	ÏŞÖÆ·µ»ØµÄÊı¾İ£º×ñ´ÓÇĞÆ¬Óï·¨£¬µ«²»Ö§³Ö¸ºË÷Òı£¬²¢·ÇÏÈ²éÕÒËùÓĞÔÙÇĞÆ¬
+	é™åˆ¶è¿”å›çš„æ•°æ®ï¼šéµä»åˆ‡ç‰‡è¯­æ³•ï¼Œä½†ä¸æ”¯æŒè´Ÿç´¢å¼•ï¼Œå¹¶éå…ˆæŸ¥æ‰¾æ‰€æœ‰å†åˆ‡ç‰‡
 
-	É¾³ı¶ÔÏó£º'''a=Author.objects.get(name='chaos')
-				  p.delete()'''
+	åˆ é™¤å¯¹è±¡ï¼ša=Author.objects.get(name='chaos')
+			 p.delete()
 				  
-             '''Author.objects.all().delete()'''//±ØĞë¼Óall()
+             Author.objects.all().delete()  //å¿…é¡»åŠ all()
 
+6.è®¾ç½®å­—æ®µå¯é€‰:email = models.EmailField(**blank=True,null=True** )
+
+**7.è®¾ç½®ä¸­æ–‡å­—æ®µæ ‡ç­¾ï¼šemail = models.EmailField(blank=True, verbose_name='ç”µå­é‚®ä»¶')  å¦ï¼šcodingï¼šutf-8**
 
 

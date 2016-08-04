@@ -1,3 +1,4 @@
+# -*-coding:utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -14,7 +15,7 @@ class Publisher(models.Model):
 class Author(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
-    email = models.EmailField()
+    email = models.EmailField(blank=True, verbose_name='电子邮件')
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
