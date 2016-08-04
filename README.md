@@ -14,3 +14,21 @@
   
   Author.objects.all() //取出数据库的信息，相当于执行了一条SQL `` SELECT`` 语句
 
+**5.数据过滤:Author.objects.filter(name='')//可以传递多个参数  name__contains=''模糊匹配,返回一个记录集
+
+    获取单个对象：Author.objects.get(name='') //如果查询没有返回结果就会抛出异常
+	
+	数据排序：Author.objects.order_by('name')//'-name'逆序，参数也可以为多个，第二个字段会在第一个字段的值相同的情况下被使用到
+	
+	在模型中指定缺省排序方式：'''class Meta
+									ordering =['name']'''
+									
+	限制返回的数据：遵从切片语法，但不支持负索引，并非先查找所有再切片
+
+	删除对象：'''a=Author.objects.get(name='chaos')
+				  p.delete()'''
+				  
+             '''Author.objects.all().delete()'''//必须加all()
+
+
+
