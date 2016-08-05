@@ -1,6 +1,7 @@
 from django.http import HttpResponse,Http404
 from django.template.loader import get_template
 from django.template import Context
+from django.shortcuts import render_to_response
 import datetime
 def hello(request):
     #return HttpResponse("<em>Hello world</em>")
@@ -22,3 +23,14 @@ def current_datetime(request):
     t = get_template('current_datetime.html')
     html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
+def display_meta(request):
+    values = request.META.items()
+    values.sort()
+    html = []
+    for k, v in values:
+        html.append('<tr><td>%s</td><td>%s</td></tr>' % (k, v))
+    return HttpResponse('<table>%s</table>' % '\n'.join(html))
+def archive(request):
+    values = request.META.items()
+    values.sort()
+    return render_to_response("meta.html",locals())

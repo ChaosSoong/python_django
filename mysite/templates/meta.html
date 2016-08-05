@@ -1,0 +1,21 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+        <style type="text/css">
+            table {text-align: center;}
+            td {padding-left:10px;padding-right:10px;}
+        </style>
+    </head>
+    <body>
+        {% for k,v in values%}
+        <table>
+            <tr>
+                <td>{{k}}</td>
+                <td>{{v}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+ 
+    </body>
+</html>
