@@ -19,7 +19,7 @@ from django.contrib import admin
 from books import views
 admin.autodiscover()
 urlpatterns = patterns('',
-    ('^hello/$', hello),
+    ('^$', hello),
 	(r'^admin/', include(admin.site.urls)),
 	('^time/$',current_datetime),
 	(r'^time/(\d{1,2})/$', hours_ahead),
