@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import *
 from mysite.views import hello,current_datetime,hours_ahead,display_meta,archive
 from django.contrib import admin
-from books import views
+from books.views import search,search_form
+from contact import views
 admin.autodiscover()
 urlpatterns = patterns('',
     ('^$', hello),
@@ -25,6 +26,7 @@ urlpatterns = patterns('',
 	(r'^time/(\d{1,2})/$', hours_ahead),
 	('^meta/$',display_meta),
 	('^metas/$',archive),
-	(r'^search-form/$', views.search_form),
-	(r'^search/$', views.search),
+	(r'^search-form/$', search_form),
+	(r'^search/$', search),
+	(r'^contact/$', views.contact),
 )
