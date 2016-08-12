@@ -3,6 +3,13 @@
     <title>Search</title>
 </head>
 <body>
+	{% if errors %}
+	<ul>
+		{% for  error in errors %}
+		<ul>{{ error }}</ul>
+		{% endfor %}
+	</ul>
+	{% endif %}
     {% if error %}
         <p style="color: red;">Please submit a search term.</p>
     {% endif %}
