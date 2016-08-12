@@ -35,4 +35,6 @@
 
 **7.设置中文字段标签：email = models.EmailField(blank=True, verbose_name='电子邮件')  另：coding：utf-8**
 
+8.改进表单的时候,''/search-form/''指向的是表单,更改之后
+**<form action="" method="get">**action=""后指向本页面,而''/search-form/''没有任何修改,应该为''/search/''
 
