@@ -38,3 +38,4 @@
 8.改进表单的时候,''/search-form/''指向的是表单,更改之后
 **<form action="" method="get">**action=""后指向本页面,而''/search-form/''没有任何修改,应该为''/search/''
 
+9.有关csrf验证问题:[点这里](http://blog.csdn.net/tr1ue/article/details/20654943)
