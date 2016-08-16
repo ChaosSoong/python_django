@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),],
+        'DIRS': [os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
+PROJECT_DIR = os.path.dirname(__file__)
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -119,5 +119,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, 'staticfiles'),
+)

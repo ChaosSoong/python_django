@@ -14,10 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import *
-from mysite.views import hello,current_datetime,hours_ahead,display_meta,archive
+from mysite.views import hello,current_datetime,hours_ahead,display_meta,archive,dance
 from django.contrib import admin
 from books.views import search,search_form
 from contact import views
+from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from mysite import settings
 admin.autodiscover()
 urlpatterns = patterns('',
     ('^$', hello),
@@ -29,4 +33,7 @@ urlpatterns = patterns('',
 	(r'^search-form/$', search_form),
 	(r'^search/$', search),
 	(r'^contact/$', views.contact),
-)
+	url(r'^dance/$', dance),
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()

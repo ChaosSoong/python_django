@@ -34,3 +34,5 @@ def archive(request):
     values = request.META.items()
     values.sort()
     return render_to_response("meta.html",locals())
+def dance(request):
+	return render_to_response("time.html")
