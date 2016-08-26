@@ -24,15 +24,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from mysite import settings
 admin.autodiscover()
 urlpatterns = patterns('',
-    ('^$', hello),
-	(r'^admin/', include(admin.site.urls)),
-	('^time/$',current_datetime),
-	(r'^time/(\d{1,2})/$', hours_ahead),
-	('^meta/$',display_meta),
-	('^metas/$',archive),
-	(r'^search-form/$', search_form),
-	(r'^search/$', search),
-	(r'^contact/$', views.contact),
+    url('^$', hello),
+	url(r'^admin/', include(admin.site.urls)),
+	url('^time/$',current_datetime),
+	url(r'^time/(\d{1,2})/$', hours_ahead),
+	url('^meta/$',display_meta),
+	url('^metas/$',archive),
+	url(r'^search-form/$', search_form),
+	url(r'^search/$', search),
+	url(r'^contact/$', views.contact),
 	url(r'^dance/$', dance),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
