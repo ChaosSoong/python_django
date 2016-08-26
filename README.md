@@ -1,13 +1,13 @@
 ##注意坑
 ###数据库采用的是sqlite3
 
-- 数据验证命令:python manage.py check**
+- 数据验证命令:python manage.py check
  
-- 生成数据库表:python manage.py makemigrations models_name**
+- 生成数据库表:python manage.py makemigrations models_name
 
-- 同步模型到数据库的命令:python manage.py migrate**
+- 同步模型到数据库的命令:python manage.py migrate
 
-- from books.models import Author //导入Author模型类**
+- from books.models import Author //导入Author模型类
 
   	a=Author(first_name='',last_name='',email='')  //创建模型类的实例
   
@@ -15,7 +15,7 @@
   
   	Author.objects.all() //取出数据库的信息，相当于执行了一条SQL `` SELECT`` 语句
 
-- 数据过滤:Author.objects.filter(name='')//可以传递多个参数  	name__contains=''模糊匹配,返回一个记录集**
+- 数据过滤:Author.objects.filter(name='')//可以传递多个参数  	name__contains=''模糊匹配,返回一个记录集
 
 	获取单个对象：Author.objects.get(name='') //如果查询没有返回结果就会抛出异常
 	
@@ -33,7 +33,7 @@
 
 - 设置字段可选:email = models.EmailField(**blank=True,null=True** )
 
-- 设置中文字段标签：email = models.EmailField(blank=True, verbose_name='电子邮件')  另：coding：utf-8**
+- 设置中文字段标签：email = models.EmailField(blank=True, verbose_name='电子邮件')  另：**coding：utf-8**
 
 - 改进表单的时候,''/search-form/''指向的是表单,更改之后
 **< form action="" method="get">**action=""后指向本页面,而''/search-form/''没有任何修改,应该为''/search/''
